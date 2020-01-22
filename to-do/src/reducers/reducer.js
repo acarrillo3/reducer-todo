@@ -1,7 +1,7 @@
 import react from 'react'
 
 // Step 1 creat a reducer function and and initial state object
-export const reducer = (state) => {
+export const listReducer = (state) => {
     return {
         ...state,
         todo: 'new todo'
