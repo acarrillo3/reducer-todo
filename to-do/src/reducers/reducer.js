@@ -1,9 +1,28 @@
-import react from 'react'
-
-// Step 1 creat a reducer function and and initial state object
-export const listReducer = (state) => {
-    return {...state, todo:'new todo'}
-};
+export const listReducer = (state, action) => {
+    switch (action.type) {
+        case 'ADD_TODO':
+          return [
+            ...state,
+            {
+              item: action.payload,
+              completed: false,
+              id: Date.now()
+            }
+          ]
+        case "TOGGLE_EDIT":
+          return state.map(todo => {
+            console.log(action.payload)
+            if (todo.id === action.payload) {
+              return { ...todo, completed: !todo.completed };
+            } else {
+              return todo;
+            }
+          });
+        case 'DONE_TOGGLE':
+          return state.filter(done => done.id !== action.payload)
+        default:
+          return state
+      }};
 
 export const initialState = [
     {
