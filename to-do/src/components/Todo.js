@@ -1,4 +1,4 @@
-//step 3 
+//step 2
 import React from 'react';
 
 export default (props) => (

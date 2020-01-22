@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <h1>Welcome to your To-Do's App!</h1>
       <TodoList />
+      
     </div>
   );
 }
